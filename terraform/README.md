@@ -125,3 +125,4 @@ git checkout master
 
 git merge branch 
 https://intellipaat.com/community/21257/git-merge-error-you-need-to-resolve-your-current-index-first
+test
