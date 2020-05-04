@@ -122,7 +122,7 @@ git merge -s ours master
 git checkout master
 
 # Merge the topic branch into master - this should now be a fast-forward that leaves you with master exactly as branch was:
-
 git merge branch 
 https://intellipaat.com/community/21257/git-merge-error-you-need-to-resolve-your-current-index-first
 test field
+
