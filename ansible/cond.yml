@@ -1,0 +1,14 @@
+- hosts: webservers
+  remote_user: dcg
+  vars:
+    dir: "{{dir}}"
+    operator: "{{op}}"
+  tasks:
+    - name: create dir
+      file:
+        path: /home/dcg/test
+        state: directory
+      when: operator == "make"
+    - name: list dir
+      command: rm -d {{dir}}
+      when: operator == "del"
