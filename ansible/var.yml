@@ -1,0 +1,9 @@
+- hosts: webservers
+  remote_user: dcg
+  vars:
+    var1: "file1"
+    var2: "file2"
+    var3: "{{var3}}"
+  tasks:
+    - name: using vars
+      command: touch {{var3}}
