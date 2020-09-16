@@ -1,0 +1,11 @@
+- hosts: webservers
+  remote_user: dcg
+  tasks:
+    - name: Create dirs
+      file:
+        path: /var/tmp/test/{{item}}
+        state: directory
+      loop:
+        - d1
+        - d2
+        - d3

@@ -1,0 +1,26 @@
+- hosts: webservers
+  remote_user: dcg
+  handlers:
+    - name: restart apache
+      service:
+        name: apache2
+        state: restarted
+      listen: "restart apache"
+  tasks:
+    - name: Create config
+      file:
+        path: /var/tmp/test/apache
+        state: directory
+      notify: "restart apache"
+    - name: with loops
+      file:
+        path: /var/tmp/test/apache/{{ item }}
+        state: touch
+      with_items:
+        - testfile1
+        - testfile2
+    - name: Condition ubuntu
+      file:
+        path: /var/tmp/test/ubuntu
+        state: touch
+      when: ansible_os_family == "Debian"
